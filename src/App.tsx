@@ -26,7 +26,6 @@ function App() {
     try {
       setConnectionStatus('checking');
       const healthResult = await healthCheck();
-      console.log('Backend health check:', healthResult);
       
       if (healthResult.models_loaded) {
         setConnectionStatus('connected');
@@ -51,9 +50,7 @@ function App() {
     setLoadingState({ isLoading: true, error: null });
     
     try {
-      console.log('Submitting profile:', profile);
       const predictionResults = await predictNutrientDeficiencies(profile);
-      console.log('Prediction results:', predictionResults);
       
       setResults(predictionResults);
       setShowForm(false);

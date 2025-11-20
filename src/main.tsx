@@ -3,12 +3,6 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
-// Debug logging
-console.log('Environment:', {
-  NODE_ENV: import.meta.env.NODE_ENV,
-  VITE_API_URL: (import.meta as any).env.VITE_API_URL,
-  BASE_URL: import.meta.env.BASE_URL
-});
 
 // Add error handling for debugging
 const rootElement = document.getElementById('root');
