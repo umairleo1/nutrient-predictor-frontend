@@ -37,17 +37,20 @@ This React application serves as the user interface for the Nutrient Deficiency 
 ### Setup
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/umairleo1/nutrient-predictor-frontend.git
 cd nutrient-predictor-frontend
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -72,11 +75,11 @@ npm run type-check   # TypeScript compilation check
 The frontend communicates with the FastAPI backend service deployed on Render:
 
 ```typescript
-const API_BASE_URL = 'https://nutrient-predictor-backend.onrender.com'; // Production
+const API_BASE_URL = "https://your-nutrient-predictor-production"; // Production
 // const API_BASE_URL = 'http://localhost:8000'; // Development
 ```
 
-**Live Backend**: [https://nutrient-predictor-backend.onrender.com](https://nutrient-predictor-backend.onrender.com)
+**Live Backend**: [https://your-nutrient-predictor-production](https://your-nutrient-predictor-production)
 
 ## Project Structure
 
@@ -111,7 +114,9 @@ public/               # Static assets
 ## Components
 
 ### UserInputForm
+
 Collects user demographic and health information:
+
 - Age, gender, race/ethnicity
 - Height, weight (BMI calculation)
 - Education level, marital status
@@ -119,14 +124,18 @@ Collects user demographic and health information:
 - Real-time validation and BMI display
 
 ### PredictionResults
+
 Displays prediction outcomes:
+
 - Risk scores for B12, Iron deficiency, and Diabetes
 - Confidence levels and risk categories
 - SHAP explanations for model interpretability
 - Personalized recommendations
 
 ### ModelPerformance
+
 Technical information about ML models:
+
 - Model accuracy metrics (AUC, Precision, Recall)
 - Training data information
 - Feature importance analysis
@@ -135,18 +144,21 @@ Technical information about ML models:
 ## Features in Detail
 
 ### Health Profile Input
+
 - **Comprehensive Form**: 8-field health profile collection
 - **Smart Validation**: Real-time input validation with helpful error messages
 - **BMI Calculator**: Automatic BMI calculation and categorization
 - **Responsive Design**: Works seamlessly on mobile and desktop
 
 ### Prediction Display
+
 - **Risk Scoring**: Color-coded risk levels (Very Low, Low, Moderate, High, Very High)
 - **Confidence Indicators**: Model confidence for each prediction
 - **Interactive Charts**: SHAP value visualizations for model explanations
 - **Recommendations**: Personalized nutritional guidance
 
 ### User Experience
+
 - **Loading States**: Smooth loading animations during API calls
 - **Error Handling**: Graceful error handling with user-friendly messages
 - **Responsive Layout**: Mobile-first design with tablet and desktop optimization
@@ -155,12 +167,14 @@ Technical information about ML models:
 ## Styling
 
 The application uses Tailwind CSS for styling with:
+
 - **Design System**: Consistent color palette and typography
 - **Component Library**: Reusable UI components
 - **Animations**: Smooth transitions and hover effects
 - **Dark Mode Ready**: Architecture supports dark mode implementation
 
 ### Color Conventions
+
 - **Primary**: Blue gradient (Blue 500 to Indigo 600)
 - **Success**: Green 500 for positive outcomes
 - **Warning**: Amber 500 for moderate risks
@@ -170,19 +184,24 @@ The application uses Tailwind CSS for styling with:
 ## Deployment
 
 ### Production Build
+
 ```bash
 npm run build
 ```
 
 ### Deployment Platforms
+
 This application is optimized for deployment on:
+
 - **Vercel**: Zero-config deployment with automatic builds
 - **Netlify**: Static site hosting with form handling
 - **GitHub Pages**: Static deployment option
 - **AWS S3 + CloudFront**: Enterprise deployment solution
 
 ### Environment Variables
+
 Create a `.env.local` file for environment-specific configuration:
+
 ```env
 VITE_API_URL=https://your-backend-url.com
 VITE_APP_TITLE=Nutrient Deficiency Predictor
@@ -205,12 +224,14 @@ VITE_APP_TITLE=Nutrient Deficiency Predictor
 ## Development Guidelines
 
 ### Code Style
+
 - TypeScript strict mode enabled
 - ESLint configuration for code quality
 - Prettier integration for formatting
 - Conventional commits for version control
 
 ### Component Architecture
+
 - Functional components with hooks
 - Props interface definitions
 - Error boundaries for robust error handling
