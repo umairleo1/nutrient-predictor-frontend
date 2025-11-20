@@ -175,10 +175,7 @@ export default function ModelPerformance() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 flex items-center justify-center">
         <div className="text-center">
-          <div className="relative">
-            <div className="w-20 h-20 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto"></div>
-            <div className="absolute inset-0 w-16 h-16 border-4 border-transparent border-t-purple-600 rounded-full animate-spin mx-auto mt-2 ml-2"></div>
-          </div>
+          <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto"></div>
           <p className="mt-6 text-lg text-gray-600 font-medium">Loading model insights...</p>
           <p className="mt-2 text-sm text-gray-500">Analyzing performance metrics</p>
         </div>

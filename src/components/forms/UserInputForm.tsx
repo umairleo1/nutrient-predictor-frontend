@@ -18,13 +18,13 @@ interface UserInputFormProps {
 export default function UserInputForm({ onSubmit, isLoading = false, error }: UserInputFormProps) {
   const [formData, setFormData] = useState<UserProfile>({
     age: 0,
-    gender: 'Male' as const,
-    race: 'Non-Hispanic White' as const,
+    gender: '' as any,
+    race: '' as any,
     weight: 0,
     height: 0,
-    education: 'College graduate or above' as const,
-    marital_status: 'Married' as const,
-    country_of_birth: 'US' as const
+    education: '' as any,
+    marital_status: '' as any,
+    country_of_birth: '' as any
   });
 
   const [errors, setErrors] = useState<{[key: string]: string}>({});
