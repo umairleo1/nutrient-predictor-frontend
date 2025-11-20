@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { 
-  BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
-  Cell, PieChart, Pie, Legend, ScatterChart, Scatter, ReferenceLine, RadialBarChart, RadialBar 
+  ResponsiveContainer, Tooltip, 
+  Cell, PieChart, Pie, Legend, RadialBarChart, RadialBar 
 } from 'recharts';
 import { 
-  TrendingUp, Activity, Target, AlertCircle, CheckCircle, Brain, 
-  Database, Settings, BarChart3, LineChart as LineChartIcon, 
-  Zap, Shield, Award, ArrowLeft, ArrowRight, Info, Heart
+  TrendingUp, Target, AlertCircle, CheckCircle, Brain, 
+  BarChart3, ArrowLeft, Activity, 
+  Zap, Shield, Award, Info, Heart
 } from 'lucide-react';
 import Header from '../components/layout/Header';
 
@@ -214,23 +214,23 @@ export default function ModelPerformance() {
   const currentColors = modelColors[selectedModel as keyof typeof modelColors];
 
   // Prepare data for performance comparison chart
-  const performanceData = Object.keys(metrics.performance).map(key => ({
-    model: modelDisplayNames[key as keyof typeof modelDisplayNames] || key,
-    AUC: metrics.performance[key].auc,
-    'Calibrated AUC': metrics.performance[key].calibrated_auc,
-    'CV Mean': metrics.performance[key].cv_mean,
-    Precision: metrics.performance[key].evaluation_details.precision,
-    Recall: metrics.performance[key].evaluation_details.recall,
-    'F1-Score': metrics.performance[key].evaluation_details.f1
-  }));
+  // const performanceData = Object.keys(metrics.performance).map(key => ({
+  //   model: modelDisplayNames[key as keyof typeof modelDisplayNames] || key,
+  //   AUC: metrics.performance[key].auc,
+  //   'Calibrated AUC': metrics.performance[key].calibrated_auc,
+  //   'CV Mean': metrics.performance[key].cv_mean,
+  //   Precision: metrics.performance[key].evaluation_details.precision,
+  //   Recall: metrics.performance[key].evaluation_details.recall,
+  //   'F1-Score': metrics.performance[key].evaluation_details.f1
+  // }));
 
   // Prepare confusion matrix data for visualization
-  const confusionData = [
-    { name: 'True Positive', value: currentModel.evaluation_details.confusion_matrix.true_positive, color: '#10B981', emoji: '✅' },
-    { name: 'True Negative', value: currentModel.evaluation_details.confusion_matrix.true_negative, color: '#3B82F6', emoji: '✅' },
-    { name: 'False Positive', value: currentModel.evaluation_details.confusion_matrix.false_positive, color: '#F59E0B', emoji: '⚠️' },
-    { name: 'False Negative', value: currentModel.evaluation_details.confusion_matrix.false_negative, color: '#EF4444', emoji: '❌' }
-  ];
+  // const confusionData = [
+  //   { name: 'True Positive', value: currentModel.evaluation_details.confusion_matrix.true_positive, color: '#10B981', emoji: '✅' },
+  //   { name: 'True Negative', value: currentModel.evaluation_details.confusion_matrix.true_negative, color: '#3B82F6', emoji: '✅' },
+  //   { name: 'False Positive', value: currentModel.evaluation_details.confusion_matrix.false_positive, color: '#F59E0B', emoji: '⚠️' },
+  //   { name: 'False Negative', value: currentModel.evaluation_details.confusion_matrix.false_negative, color: '#EF4444', emoji: '❌' }
+  // ];
 
   // Class imbalance data
   const classData = [
@@ -314,7 +314,7 @@ export default function ModelPerformance() {
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Select Model for Analysis</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {Object.keys(metrics.performance).map((key, index) => {
+            {Object.keys(metrics.performance).map((key) => {
               const model = metrics.performance[key];
               const isSelected = selectedModel === key;
               const colors = modelColors[key as keyof typeof modelColors];
@@ -516,7 +516,7 @@ export default function ModelPerformance() {
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ name, percentage }) => `${percentage}%`}
+                    label={({ percentage }) => `${percentage}%`}
                     outerRadius={80}
                     fill="#8884d8"
                     dataKey="value"
@@ -560,10 +560,10 @@ export default function ModelPerformance() {
           
           {/* Performance Cards Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-            {Object.keys(metrics.performance).map((key, index) => {
+            {Object.keys(metrics.performance).map((key) => {
               const model = metrics.performance[key];
               const modelName = modelDisplayNames[key as keyof typeof modelDisplayNames] || key;
-              const colors = modelColors[key as keyof typeof modelColors];
+              // const colors = modelColors[key as keyof typeof modelColors];
               const isCurrentModel = selectedModel === key;
               
               return (

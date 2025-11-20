@@ -1,4 +1,3 @@
-import React from 'react';
 import { AlertTriangle, CheckCircle, XCircle, Info } from 'lucide-react';
 import { NutrientPrediction } from '../../types';
 import { getRiskColor } from '../../constants/colors';

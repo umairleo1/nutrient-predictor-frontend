@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { AlertCircle, Loader2, Wifi, WifiOff, Heart, Activity, Zap, Target } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Loader2, Heart, Target } from 'lucide-react';
 import Header from './components/layout/Header';
 import UserInputForm from './components/forms/UserInputForm';
 import PredictionResults from './components/results/PredictionResults';
@@ -88,32 +88,6 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const ConnectionStatus = () => {
-    if (connectionStatus === 'checking') {
-      return (
-        <div className="flex items-center space-x-2 text-yellow-600">
-          <Loader2 className="h-4 w-4 animate-spin" />
-          <span className="text-sm">Connecting to backend...</span>
-        </div>
-      );
-    }
-    
-    if (connectionStatus === 'error') {
-      return (
-        <div className="flex items-center space-x-2 text-red-600">
-          <WifiOff className="h-4 w-4" />
-          <span className="text-sm">Backend unavailable</span>
-        </div>
-      );
-    }
-    
-    return (
-      <div className="flex items-center space-x-2 text-green-600">
-        <Wifi className="h-4 w-4" />
-        <span className="text-sm">Connected</span>
-      </div>
-    );
-  };
 
   // Handle navigation
   useEffect(() => {
@@ -136,10 +110,6 @@ function App() {
     setCurrentPage('model-performance');
   };
 
-  const navigateToMain = () => {
-    window.history.pushState({}, '', '/');
-    setCurrentPage('main');
-  };
 
   if (currentPage === 'model-performance') {
     return <ModelPerformance />;

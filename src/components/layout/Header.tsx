@@ -1,4 +1,4 @@
-import { Activity, Heart, Wifi, WifiOff, Loader2, Zap, Target, TrendingUp } from 'lucide-react';
+import { Heart, Wifi, WifiOff, Loader2, Zap, Target, TrendingUp } from 'lucide-react';
 
 interface HeaderProps {
   className?: string;

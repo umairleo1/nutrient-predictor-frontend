@@ -1,8 +1,5 @@
-import React from 'react';
 import { 
   Heart, 
-  Apple, 
-  Activity, 
   AlertCircle, 
   Info, 
   CheckCircle,
@@ -11,7 +8,7 @@ import {
   User
 } from 'lucide-react';
 import { Recommendation } from '../../types';
-import { getCategoryColor, getPriorityColor } from '../../constants/colors';
+import { getCategoryColor } from '../../constants/colors';
 
 interface RecommendationsProps {
   recommendations: Recommendation[];
@@ -93,7 +90,7 @@ export default function Recommendations({ recommendations, className = '' }: Rec
           <div className="space-y-6">
             {sortedPriorities.map((priority) => {
               const priorityRecs = groupedRecommendations[priority];
-              const priorityColor = getPriorityColor(priority);
+              // const priorityColor = getPriorityColor(priority);
               const PriorityIcon = getPriorityIcon(priority);
 
               return (
