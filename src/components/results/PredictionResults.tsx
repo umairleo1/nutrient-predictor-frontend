@@ -12,7 +12,6 @@ interface PredictionResultsProps {
 }
 
 export default function PredictionResults({ results, onStartOver, className = '' }: PredictionResultsProps) {
-  // @ts-ignore
   const overallScore = Math.round(results.overall_health_score * 100);
   
   // Generate intelligent summary text
