@@ -2,6 +2,10 @@
 
 A modern React application for personalized nutrient deficiency prediction using AI-powered analysis. This frontend provides an intuitive interface for users to input their health profile and receive detailed nutritional risk assessments.
 
+## 🚀 Live Demo
+
+**Try it live**: [https://umairleo1.github.io/nutrient-predictor-frontend/](https://umairleo1.github.io/nutrient-predictor-frontend/)
+
 ## Overview
 
 This React application serves as the user interface for the Nutrient Deficiency Predictor system. It provides a clean, responsive design for collecting user demographic and health data, displaying AI-generated predictions, and offering personalized nutritional recommendations.

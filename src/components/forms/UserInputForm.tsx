@@ -244,7 +244,7 @@ export default function UserInputForm({ onSubmit, isLoading = false, error }: Us
                   errors.gender && touched.gender 
                     ? 'border-red-300 bg-red-50' 
                     : 'border-gray-200 hover:border-gray-300 focus:bg-white'
-                } text-gray-900`}
+                } ${formData.gender ? 'text-gray-900' : 'text-gray-400'}`}
                 value={formData.gender}
                 onChange={(e) => handleInputChange('gender', e.target.value as 'Male' | 'Female')}
                 onBlur={() => handleBlur('gender')}
@@ -328,7 +328,7 @@ export default function UserInputForm({ onSubmit, isLoading = false, error }: Us
                   errors.race && touched.race 
                     ? 'border-red-300 bg-red-50' 
                     : 'border-gray-200 hover:border-gray-300 focus:bg-white'
-                } text-gray-900`}
+                } ${formData.race ? 'text-gray-900' : 'text-gray-400'}`}
                 value={formData.race}
                 onChange={(e) => handleInputChange('race', e.target.value)}
                 onBlur={() => handleBlur('race')}
@@ -356,7 +356,7 @@ export default function UserInputForm({ onSubmit, isLoading = false, error }: Us
                   errors.education && touched.education 
                     ? 'border-red-300 bg-red-50' 
                     : 'border-gray-200 hover:border-gray-300 focus:bg-white'
-                } text-gray-900`}
+                } ${formData.education ? 'text-gray-900' : 'text-gray-400'}`}
                 value={formData.education}
                 onChange={(e) => handleInputChange('education', e.target.value)}
                 onBlur={() => handleBlur('education')}
@@ -384,7 +384,7 @@ export default function UserInputForm({ onSubmit, isLoading = false, error }: Us
                   errors.marital_status && touched.marital_status 
                     ? 'border-red-300 bg-red-50' 
                     : 'border-gray-200 hover:border-gray-300 focus:bg-white'
-                } text-gray-900`}
+                } ${formData.marital_status ? 'text-gray-900' : 'text-gray-400'}`}
                 value={formData.marital_status}
                 onChange={(e) => handleInputChange('marital_status', e.target.value)}
                 onBlur={() => handleBlur('marital_status')}
@@ -412,7 +412,7 @@ export default function UserInputForm({ onSubmit, isLoading = false, error }: Us
                   errors.country_of_birth && touched.country_of_birth 
                     ? 'border-red-300 bg-red-50' 
                     : 'border-gray-200 hover:border-gray-300 focus:bg-white'
-                } text-gray-900`}
+                } ${formData.country_of_birth ? 'text-gray-900' : 'text-gray-400'}`}
                 value={formData.country_of_birth}
                 onChange={(e) => handleInputChange('country_of_birth', e.target.value)}
                 onBlur={() => handleBlur('country_of_birth')}
