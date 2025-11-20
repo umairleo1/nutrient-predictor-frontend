@@ -200,12 +200,14 @@ This application is optimized for deployment on:
 
 ### Environment Variables
 
-Create a `.env.local` file for environment-specific configuration:
+Create a `.env` file for local development:
 
 ```env
-VITE_API_URL=https://your-backend-url.com
+VITE_API_URL=https://nutrient-predictor-backend.onrender.com
 VITE_APP_TITLE=Nutrient Deficiency Predictor
 ```
+
+For production deployment, set environment variables in your hosting platform or GitHub repository secrets.
 
 ## Performance
 
