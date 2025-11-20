@@ -69,12 +69,14 @@ npm run type-check   # TypeScript compilation check
 
 ## API Integration
 
-The frontend communicates with the FastAPI backend service. Update the API base URL in `src/services/api.ts`:
+The frontend communicates with the FastAPI backend service deployed on Render:
 
 ```typescript
-const API_BASE_URL = 'http://localhost:8000'; // Development
-// const API_BASE_URL = 'https://your-deployed-backend.com'; // Production
+const API_BASE_URL = 'https://nutrient-predictor-backend.onrender.com'; // Production
+// const API_BASE_URL = 'http://localhost:8000'; // Development
 ```
+
+**Live Backend**: [https://nutrient-predictor-backend.onrender.com](https://nutrient-predictor-backend.onrender.com)
 
 ## Project Structure
 
