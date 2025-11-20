@@ -249,7 +249,7 @@ export default function UserInputForm({ onSubmit, isLoading = false, error }: Us
                 onChange={(e) => handleInputChange('gender', e.target.value as 'Male' | 'Female')}
                 onBlur={() => handleBlur('gender')}
               >
-                <option value="" className="text-gray-400">Select</option>
+                <option value="" disabled className="text-gray-400">Select</option>
                 {GENDER_OPTIONS.map(option => (
                   <option key={option} value={option}>{option}</option>
                 ))}
@@ -333,7 +333,7 @@ export default function UserInputForm({ onSubmit, isLoading = false, error }: Us
                 onChange={(e) => handleInputChange('race', e.target.value)}
                 onBlur={() => handleBlur('race')}
               >
-                <option value="" className="text-gray-400">Select</option>
+                <option value="" disabled className="text-gray-400">Select</option>
                 {RACE_OPTIONS.map(option => (
                   <option key={option} value={option}>{option}</option>
                 ))}
@@ -361,7 +361,7 @@ export default function UserInputForm({ onSubmit, isLoading = false, error }: Us
                 onChange={(e) => handleInputChange('education', e.target.value)}
                 onBlur={() => handleBlur('education')}
               >
-                <option value="" className="text-gray-400">Select</option>
+                <option value="" disabled className="text-gray-400">Select</option>
                 {EDUCATION_OPTIONS.map(option => (
                   <option key={option} value={option}>{option}</option>
                 ))}
@@ -389,7 +389,7 @@ export default function UserInputForm({ onSubmit, isLoading = false, error }: Us
                 onChange={(e) => handleInputChange('marital_status', e.target.value)}
                 onBlur={() => handleBlur('marital_status')}
               >
-                <option value="" className="text-gray-400">Select</option>
+                <option value="" disabled className="text-gray-400">Select</option>
                 {MARITAL_STATUS_OPTIONS.map(option => (
                   <option key={option} value={option}>{option}</option>
                 ))}
@@ -417,7 +417,7 @@ export default function UserInputForm({ onSubmit, isLoading = false, error }: Us
                 onChange={(e) => handleInputChange('country_of_birth', e.target.value)}
                 onBlur={() => handleBlur('country_of_birth')}
               >
-                <option value="" className="text-gray-400">Select</option>
+                <option value="" disabled className="text-gray-400">Select</option>
                 {COUNTRY_OPTIONS.map(option => (
                   <option key={option} value={option}>{option}</option>
                 ))}
